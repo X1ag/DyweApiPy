@@ -24,8 +24,5 @@ async def get_nft_collection_floor(nft_collection_address: str):
   except:
     return None
 
-async def main():
-  while True:
-    result = await get_nft_collection_floor(ANONYMOUS_TG_NUMBERS)
-    print(result)
+
  
