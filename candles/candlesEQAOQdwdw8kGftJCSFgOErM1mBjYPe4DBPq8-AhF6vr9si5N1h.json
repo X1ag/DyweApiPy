@@ -1,10 +1,354 @@
 [
   {
-    "timestamp": "2024-10-03 19:11:54",
-    "price": 165.1,
-    "open": 165.1,
-    "high": 165.1,
-    "low": 165.1,
-    "close": 165.1
+    "timestamp": "2024-10-04 12:29:13",
+    "price": 166.9,
+    "open": 166.9,
+    "high": 166.9,
+    "low": 166.9,
+    "close": null
+  },
+  {
+    "timestamp": "2024-10-04 12:29:18",
+    "price": 166.9,
+    "open": 166.9,
+    "high": 166.9,
+    "low": 166.9,
+    "close": null
+  },
+  {
+    "timestamp": "2024-10-04 12:29:24",
+    "price": 166.9,
+    "open": 166.9,
+    "high": 166.9,
+    "low": 166.9,
+    "close": null
+  },
+  {
+    "timestamp": "2024-10-04 12:29:29",
+    "price": 166.9,
+    "open": 166.9,
+    "high": 166.9,
+    "low": 166.9,
+    "close": null
+  },
+  {
+    "timestamp": "2024-10-04 12:29:35",
+    "price": 166.9,
+    "open": 166.9,
+    "high": 166.9,
+    "low": 166.9,
+    "close": null
+  },
+  {
+    "timestamp": "2024-10-04 12:29:41",
+    "price": 166.9,
+    "open": 166.9,
+    "high": 166.9,
+    "low": 166.9,
+    "close": null
+  },
+  {
+    "timestamp": "2024-10-04 12:29:46",
+    "price": 166.9,
+    "open": 166.9,
+    "high": 166.9,
+    "low": 166.9,
+    "close": null
+  },
+  {
+    "timestamp": "2024-10-04 12:29:52",
+    "price": 166.9,
+    "open": 166.9,
+    "high": 166.9,
+    "low": 166.9,
+    "close": null
+  },
+  {
+    "timestamp": "2024-10-04 12:29:58",
+    "price": 166.9,
+    "open": 166.9,
+    "high": 166.9,
+    "low": 166.9,
+    "close": null
+  },
+  {
+    "timestamp": "2024-10-04 12:30:04",
+    "price": 166.9,
+    "open": 166.9,
+    "high": 166.9,
+    "low": 166.9,
+    "close": null
+  },
+  {
+    "timestamp": "2024-10-04 12:30:09",
+    "price": 166.9,
+    "open": 166.9,
+    "high": 166.9,
+    "low": 166.9,
+    "close": null
+  },
+  {
+    "timestamp": "2024-10-04 12:30:15",
+    "price": 166.9,
+    "open": 166.9,
+    "high": 166.9,
+    "low": 166.9,
+    "close": null
+  },
+  {
+    "timestamp": "2024-10-04 12:30:20",
+    "price": 166.9,
+    "open": 166.9,
+    "high": 166.9,
+    "low": 166.9,
+    "close": null
+  },
+  {
+    "timestamp": "2024-10-04 12:30:26",
+    "price": 166.9,
+    "open": 166.9,
+    "high": 166.9,
+    "low": 166.9,
+    "close": null
+  },
+  {
+    "timestamp": "2024-10-04 12:30:32",
+    "price": 166.9,
+    "open": 166.9,
+    "high": 166.9,
+    "low": 166.9,
+    "close": null
+  },
+  {
+    "timestamp": "2024-10-04 12:30:37",
+    "price": 166.9,
+    "open": 166.9,
+    "high": 166.9,
+    "low": 166.9,
+    "close": null
+  },
+  {
+    "timestamp": "2024-10-04 12:30:43",
+    "price": 166.9,
+    "open": 166.9,
+    "high": 166.9,
+    "low": 166.9,
+    "close": null
+  },
+  {
+    "timestamp": "2024-10-04 12:30:48",
+    "price": 166.9,
+    "open": 166.9,
+    "high": 166.9,
+    "low": 166.9,
+    "close": null
+  },
+  {
+    "timestamp": "2024-10-04 13:46:59",
+    "price": null,
+    "open": null,
+    "high": null,
+    "low": null,
+    "close": null
+  },
+  {
+    "timestamp": "2024-10-04 13:47:56",
+    "price": 168.9,
+    "open": 168.9,
+    "high": 168.9,
+    "low": 168.9,
+    "close": null
+  },
+  {
+    "timestamp": "2024-10-04 13:49:19",
+    "price": 168.9,
+    "open": 168.9,
+    "high": 168.9,
+    "low": 168.9,
+    "close": null
+  },
+  {
+    "timestamp": "2024-10-04 13:49:24",
+    "price": 168.9,
+    "open": 168.9,
+    "high": 168.9,
+    "low": 168.9,
+    "close": null
+  },
+  {
+    "timestamp": "2024-10-04 13:49:40",
+    "price": 168.9,
+    "open": 168.9,
+    "high": 168.9,
+    "low": 168.9,
+    "close": null
+  },
+  {
+    "timestamp": "2024-10-04 13:49:46",
+    "price": 168.9,
+    "open": 168.9,
+    "high": 168.9,
+    "low": 168.9,
+    "close": null
+  },
+  {
+    "timestamp": "2024-10-04 13:49:51",
+    "price": 168.9,
+    "open": 168.9,
+    "high": 168.9,
+    "low": 168.9,
+    "close": null
+  },
+  {
+    "timestamp": "2024-10-04 13:49:57",
+    "price": 168.9,
+    "open": 168.9,
+    "high": 168.9,
+    "low": 168.9,
+    "close": null
+  },
+  {
+    "timestamp": "2024-10-04 13:50:03",
+    "price": 168.9,
+    "open": 168.9,
+    "high": 168.9,
+    "low": 168.9,
+    "close": null
+  },
+  {
+    "timestamp": "2024-10-04 13:50:08",
+    "price": 168.9,
+    "open": 168.9,
+    "high": 168.9,
+    "low": 168.9,
+    "close": null
+  },
+  {
+    "timestamp": "2024-10-04 13:50:14",
+    "price": 168.9,
+    "open": 168.9,
+    "high": 168.9,
+    "low": 168.9,
+    "close": null
+  },
+  {
+    "timestamp": "2024-10-04 13:50:19",
+    "price": 168.9,
+    "open": 168.9,
+    "high": 168.9,
+    "low": 168.9,
+    "close": null
+  },
+  {
+    "timestamp": "2024-10-04 13:50:25",
+    "price": 168.9,
+    "open": 168.9,
+    "high": 168.9,
+    "low": 168.9,
+    "close": null
+  },
+  {
+    "timestamp": "2024-10-04 13:50:31",
+    "price": 168.9,
+    "open": 168.9,
+    "high": 168.9,
+    "low": 168.9,
+    "close": null
+  },
+  {
+    "timestamp": "2024-10-04 13:53:58",
+    "price": 168,
+    "open": 168,
+    "high": 168,
+    "low": 168,
+    "close": null
+  },
+  {
+    "timestamp": "2024-10-04 13:58:52",
+    "price": 168,
+    "open": 168,
+    "high": 168,
+    "low": 168,
+    "close": null
+  },
+  {
+    "timestamp": "2024-10-04 13:58:58",
+    "price": 168,
+    "open": 168,
+    "high": 168,
+    "low": 168,
+    "close": null
+  },
+  {
+    "timestamp": "2024-10-04 13:59:03",
+    "price": 168,
+    "open": 168,
+    "high": 168,
+    "low": 168,
+    "close": null
+  },
+  {
+    "timestamp": "2024-10-04 13:59:09",
+    "price": 168,
+    "open": 168,
+    "high": 168,
+    "low": 168,
+    "close": null
+  },
+  {
+    "timestamp": "2024-10-04 14:04:22",
+    "price": 168,
+    "open": 168,
+    "high": 168,
+    "low": 168,
+    "close": null
+  },
+  {
+    "timestamp": "2024-10-04 14:04:27",
+    "price": 168,
+    "open": 168,
+    "high": 168,
+    "low": 168,
+    "close": null
+  },
+  {
+    "timestamp": "2024-10-04 14:04:33",
+    "price": 168,
+    "open": 168,
+    "high": 168,
+    "low": 168,
+    "close": null
+  },
+  {
+    "timestamp": "2024-10-04 14:04:39",
+    "price": 168,
+    "open": 168,
+    "high": 168,
+    "low": 168,
+    "close": null
+  },
+  {
+    "timestamp": "2024-10-04 14:04:44",
+    "price": 168,
+    "open": 168,
+    "high": 168,
+    "low": 168,
+    "close": null
+  },
+  {
+    "timestamp": "2024-10-04 14:04:50",
+    "price": 168,
+    "open": 168,
+    "high": 168,
+    "low": 168,
+    "close": null
+  },
+  {
+    "timestamp": "2024-10-04 14:04:55",
+    "price": 168,
+    "open": 168,
+    "high": 168,
+    "low": 168,
+    "close": null
   }
 ]

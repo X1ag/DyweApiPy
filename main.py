@@ -1,20 +1,16 @@
-from datetime import datetime
-import json
-from quart import Quart, jsonify
+import asyncio
+from threading import Thread
+import parser 
+import api
 
-app = Quart(__name__)
+def start_parser(address, timeframe):
+	asyncio.run(parser.main(address, timeframe))
 
-# Пример маршрута для GET-запроса
-@app.route('/dyweapi/v1/getData/<address>/<timeframe>', methods=['GET'])
-async def get_data(address, timeframe):
-   try:
-       with open(f'candles/candles{address}{timeframe}.json', 'r') as f:
-            data = json.load(f)
-            return jsonify(data)
-   except FileNotFoundError:
-       return jsonify({"error": "File not found"}), 404
-   except json.decoder.JSONDecodeError:
-       return jsonify({"error": "invalid Json"}), 404
+def start_main(address, timeframe):
+	asyncio.run(api.main(address, timeframe))
+ 
+thread1 = Thread(target=start_parser, args=("EQAOQdwdw8kGftJCSFgOErM1mBjYPe4DBPq8-AhF6vr9si5N", "1h"), daemon=True)
+thread1.start()
+start_main('EQAOQdwdw8kGftJCSFgOErM1mBjYPe4DBPq8-AhF6vr9si5N', '1h')
 
-if __name__ == '__main__':
-    app.run(debug=True)
+print('script started')

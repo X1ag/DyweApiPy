@@ -4,10 +4,11 @@ import time
 import json
 import os
 from get_floor import get_nft_collection_floor
-os.environ['TZ'] = 'Europe/Moscow'
 
+os.environ['TZ'] = 'Europe/Moscow'
 prices = []
 close_price = None
+last_price = None
 
 def get_seconds_until_next_hour():
   now = datetime.now()
@@ -16,12 +17,13 @@ def get_seconds_until_next_hour():
   return (next_hour - now).total_seconds()
 
 async def clear_prices_at_start_of_hour():
-  global close_price
+  global last_price
   while True:
     seconds_until_next_hour = get_seconds_until_next_hour()
     await asyncio.sleep(seconds_until_next_hour)
-    close_price = prices[-1]
+    last_price = prices[-1]
     prices.clear()
+    last_price = None
     print(f'Prices cleared at {datetime.now().strftime("%Y-%m-%d %H:%M:%S")}')
     await asyncio.sleep(3600)
 
@@ -42,6 +44,7 @@ async def calculateLowPrice():
   return min(prices)	
 
 async def calculateLastPrice():
+  close_price = last_price
   return close_price 
 
 async def writeFloorInJson(address: str = "EQAOQdwdw8kGftJCSFgOErM1mBjYPe4DBPq8-AhF6vr9si5N", timeframe: str = "1h"):
@@ -71,7 +74,7 @@ async def writeFloorInJson(address: str = "EQAOQdwdw8kGftJCSFgOErM1mBjYPe4DBPq8-
 
                 with open(f'candles/candles{address}{timeframe}.json', 'w', encoding='utf8') as file:
                     json.dump(json_array, file, ensure_ascii=False, indent=2)
-                    print(f"File candles{address}{timeframe}.json updated")
+                    print(f"File candles{address}{timeframe}.json updated", len(prices))
                     file.write('\n')
 
         except Exception as e:
