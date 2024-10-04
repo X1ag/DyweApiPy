@@ -85,6 +85,3 @@ async def main(address, timeframe):
     time.tzset()
     asyncio.create_task(clear_prices_at_start_of_hour())
     await writeFloorInJson(address, timeframe)
-
-if __name__ == '__main__':
-    asyncio.run(main("EQAOQdwdw8kGftJCSFgOErM1mBjYPe4DBPq8-AhF6vr9si5N", "1h"))

@@ -15,7 +15,6 @@ async def get_data(address, timeframe):
        return jsonify({"error": "File not found"}), 404
    except json.decoder.JSONDecodeError:
        return jsonify({"error": "invalid Json"}), 404
-def main(address, timeframe):
-    app.run(debug=True)
-if __name__ == '__main__':
+   
+def main():
     app.run(debug=True)
