@@ -106,5 +106,53 @@
   {
     "timestamp": "2024-10-01T15:16:19.090522",
     "floor": 151
+  },
+  {
+    "timestamp": "2024-10-01T17:40:26.172629",
+    "price": 157.999999,
+    "open": 0,
+    "high": null,
+    "low": null,
+    "close": null
+  },
+  {
+    "timestamp": "2024-10-01T17:40:31.668248",
+    "price": 157.999999,
+    "open": 0,
+    "high": null,
+    "low": null,
+    "close": null
+  },
+  {
+    "timestamp": "2024-10-01T17:40:37.036285",
+    "price": 157.999999,
+    "open": 0,
+    "high": null,
+    "low": null,
+    "close": null
+  },
+  {
+    "timestamp": "2024-10-01T17:40:42.507193",
+    "price": 157.999999,
+    "open": 0,
+    "high": null,
+    "low": null,
+    "close": null
+  },
+  {
+    "timestamp": "2024-10-01T17:40:47.874290",
+    "price": 157.999999,
+    "open": 0,
+    "high": null,
+    "low": null,
+    "close": null
+  },
+  {
+    "timestamp": "2024-10-01T17:43:02.539533",
+    "price": 157.999999,
+    "open": 0,
+    "high": null,
+    "low": null,
+    "close": null
   }
 ]
