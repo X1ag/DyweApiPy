@@ -1,5 +1,4 @@
 from gql import gql, Client
-import time
 from gql.transport.aiohttp import AIOHTTPTransport
 
 ANONYMOUS_TG_NUMBERS = 'EQAOQdwdw8kGftJCSFgOErM1mBjYPe4DBPq8-AhF6vr9si5N'
