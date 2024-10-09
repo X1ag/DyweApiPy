@@ -1,10 +1,10 @@
 import asyncio
 from datetime import datetime, timedelta
-import pprint
 import time
 import json
 import os
-from methods.get_floor import get_nft_collection_floor
+from get_floor import get_nft_collection_floor
+
 os.environ['TZ'] = 'Europe/Moscow'
 
 prices = []
@@ -34,6 +34,12 @@ def percentChange():
         return None
     return ((prices[-1] - prices[0])/(prices[0]+prices[-1] / 2)) * 100
 
+async def writeFloorInFile(data, address: str = "EQAOQdwdw8kGftJCSFgOErM1mBjYPe4DBPq8-AhF6vr9si5N"):
+    with open(f'../candles/candles{address}.json', 'w+', encoding='utf8') as file:
+                    json.dump(data, file, ensure_ascii=False, indent=2)
+                    print(f"File \033[96mcandles{address}\033[0m.json updated, request amount: {len(prices)}")
+                    file.write('\n')
+                    
 async def getData(address: str = "EQAOQdwdw8kGftJCSFgOErM1mBjYPe4DBPq8-AhF6vr9si5N"):
     while True:
         try:
@@ -48,16 +54,17 @@ async def getData(address: str = "EQAOQdwdw8kGftJCSFgOErM1mBjYPe4DBPq8-AhF6vr9si
                 'close': prices[-1],
             }
             print(f'\033[93m Collected data: {data} \033[0m')
+            if data:
+                await writeFloorInFile(data, address)
         except Exception as e:
             print(f"Error: {e}")
         await asyncio.sleep(5)
 
-async def main(address, timeframe):
+async def main(address):
     time.tzset()
     print('Starting main function')
-    await getData(address, timeframe)
+    await getData(address)
 
 if __name__ == "__main__":
-    address = "EQAOQdwdw8kGftJCSFgOErM1mBjYPe4DBPq8-AhF6vr9si5N"
-    timeframe = "1h"
-    asyncio.run(main(address, timeframe))
+    address = "EQBcjALtmHwSBCSpDOZ1_emrSQVtJU6J0POZR-ThkZjfXkZs"
+    asyncio.run(main(address))
