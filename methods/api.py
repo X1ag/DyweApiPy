@@ -16,5 +16,8 @@ async def get_data(address, timeframe):
    except json.decoder.JSONDecodeError:
        return jsonify({"error": "invalid Json"}), 404
    
+@app.route('/health', methods=['GET'])
+async def health():
+    return "Health check: OK \n"
 def main():
     app.run(debug=True)
