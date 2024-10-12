@@ -3,6 +3,7 @@ from datetime import datetime, timedelta
 import time
 import json
 import os
+import threading
 from methods.get_floor import get_nft_collection_floor
 
 os.environ['TZ'] = 'Europe/Moscow'
@@ -10,22 +11,45 @@ os.environ['TZ'] = 'Europe/Moscow'
 prices = []
 close_price = None
 isClose = False
-first_close_hour = (datetime.now() + timedelta(hours=1)).replace(minute=0, second=0, microsecond=0)      
-def get_open_hour():
-    now = datetime.now()
-    open_hour = now.replace(minute=0, second=0, microsecond=0)
-    print(f'\033[92m Open hour: {open_hour} \033[0m')
-    return open_hour
+now = datetime.now()
+close_time = (now + timedelta(minutes=5)).replace(minute=0, second=0, microsecond=0)
+open_time = now.replace(second=0, microsecond=0)
+prices = []  
 
-def get_close_hour():
-    global first_close_hour
+def get_time():
+    global open_time,close_time, prices
+    # Обновление текущего времени
     now = datetime.now()
-    if first_close_hour == now.replace(minute=0, second=0, microsecond=0):
+    if len(prices)> 0 and close_time <= now.replace(second=0, microsecond=0):
+        filename='./candles/candlesANON.json'
+        if os.path.exists(filename): 
+            with open(filename, 'r+') as json_file:
+                json_data = json.load(json_file)
+        else:
+            json_data = {"data": []}
+
+        data = {
+                    'openTime':int(open_time.timestamp() * 1000),
+                    'closeTime':int(close_time.timestamp() * 1000),
+                    'percentChangePrice': percentChange(),
+                    'currentPrice': prices[-1],
+                    'open': prices[0],
+                    'high': max(prices),
+                    'low': min(prices),
+                    'close': prices[-1],
+        }
+        # Добавляем новые данные в список "data"
+        json_data["data"].append(data)
+        # Записываем обновленные данные в файл
+        with open(filename, 'w+') as json_file:
+            json.dump(json_data, json_file, indent=4)
+        print(f"File \033[96mcandlesANON\033[0m.json updated, request amount: {len(prices)}")
         prices.clear()
-        first_close_hour = (now + timedelta(hours=1)).replace(minute=0, second=0, microsecond=0)  
-    close_hour = (now + timedelta(hours=1)).replace(minute=0, second=0, microsecond=0)      
-    print(f'\033[92m Close hour: {close_hour} \033[0m')
-    return close_hour
+        close_time = (now + timedelta(minutes=5)).replace(second=0, microsecond=0)
+        open_time = now.replace(second=0, microsecond=0)
+
+    print(f'\033[92m close time: {close_time} \033[0m')
+    return open_time, close_time
 
 async def getPrice(address):
     print(f'Fetching price for address: {address}')
@@ -49,8 +73,8 @@ async def getData(address: str = "EQAOQdwdw8kGftJCSFgOErM1mBjYPe4DBPq8-AhF6vr9si
     while True:
         try:
             data = {
-                'openTime': int(get_open_hour().timestamp() * 1000),
-                'closeTime': int(get_close_hour().timestamp() * 1000),
+                'openTime': int(get_time()[0].timestamp() * 1000),
+                'closeTime':int(get_time()[1].timestamp() * 1000),
                 'percentChangePrice': percentChange(),
                 'currentPrice': await getPrice(address),
                 'open': prices[0],
@@ -62,7 +86,7 @@ async def getData(address: str = "EQAOQdwdw8kGftJCSFgOErM1mBjYPe4DBPq8-AhF6vr9si
             if data:
                 await writeFloorInFile(data, address)
         except Exception as e:
-            print(f"Error: {e}")
+            print(f"Bro, eto oshibka bro: {e}")
         await asyncio.sleep(5)
 
 async def main(address):
