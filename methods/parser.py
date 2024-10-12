@@ -3,7 +3,7 @@ from datetime import datetime, timedelta
 import time
 import json
 import os
-from get_floor import get_nft_collection_floor
+from methods.get_floor import get_nft_collection_floor
 
 os.environ['TZ'] = 'Europe/Moscow'
 
@@ -13,7 +13,7 @@ isClose = False
 now = datetime.now()
 
 def get_open_hour():
-    open_hour = (now - timedelta(hours=1)).replace(minute=0, second=0, microsecond=0)
+    open_hour = now.replace(minute=0, second=0, microsecond=0)
     print(f'\033[92m Open hour: {open_hour} \033[0m')
     return open_hour
 
@@ -35,7 +35,7 @@ def percentChange():
     return ((prices[-1] - prices[0])/(prices[0]+prices[-1] / 2)) * 100
 
 async def writeFloorInFile(data, address: str = "EQAOQdwdw8kGftJCSFgOErM1mBjYPe4DBPq8-AhF6vr9si5N"):
-    with open(f'../candles/candles{address}.json', 'w+', encoding='utf8') as file:
+    with open(f'./candles/candles{address}.json', 'w+', encoding='utf8') as file:
                     json.dump(data, file, ensure_ascii=False, indent=2)
                     print(f"File \033[96mcandles{address}\033[0m.json updated, request amount: {len(prices)}")
                     file.write('\n')

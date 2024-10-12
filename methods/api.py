@@ -6,9 +6,9 @@ app = Quart(__name__)
 
 # Пример маршрута для GET-запроса
 @app.route('/dyweapi/v1/getData/<address>/<timeframe>', methods=['GET'])
-async def get_data(address, timeframe):
+async def get_data(address, timeframe: str = '1h'):
    try:
-       with open(f'candles/candles{address}{timeframe}.json', 'r') as f:
+       with open(f'candles/candles{address}{timeframe}.json', 'r+') as f:
             data = json.load(f)
             return jsonify(data)
    except FileNotFoundError:
