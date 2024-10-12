@@ -10,14 +10,19 @@ os.environ['TZ'] = 'Europe/Moscow'
 prices = []
 close_price = None
 isClose = False
-now = datetime.now()
-
+first_close_hour = (datetime.now() + timedelta(hours=1)).replace(minute=0, second=0, microsecond=0)      
 def get_open_hour():
+    now = datetime.now()
     open_hour = now.replace(minute=0, second=0, microsecond=0)
     print(f'\033[92m Open hour: {open_hour} \033[0m')
     return open_hour
 
 def get_close_hour():
+    global first_close_hour
+    now = datetime.now()
+    if first_close_hour == now.replace(minute=0, second=0, microsecond=0):
+        prices.clear()
+        first_close_hour = (now + timedelta(hours=1)).replace(minute=0, second=0, microsecond=0)  
     close_hour = (now + timedelta(hours=1)).replace(minute=0, second=0, microsecond=0)      
     print(f'\033[92m Close hour: {close_hour} \033[0m')
     return close_hour

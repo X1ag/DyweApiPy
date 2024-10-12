@@ -1,4 +1,3 @@
-from datetime import datetime
 import json
 from quart import Quart, jsonify
 
@@ -6,9 +5,9 @@ app = Quart(__name__)
 
 # Пример маршрута для GET-запроса
 @app.route('/dyweapi/v1/getData/<address>/<timeframe>', methods=['GET'])
-async def get_data(address, timeframe: str = '1h'):
+async def get_data(address):
    try:
-       with open(f'candles/candles{address}{timeframe}.json', 'r+') as f:
+       with open(f'candles/candles{address}.json', 'r+') as f:
             data = json.load(f)
             return jsonify(data)
    except FileNotFoundError:
@@ -19,5 +18,6 @@ async def get_data(address, timeframe: str = '1h'):
 @app.route('/health', methods=['GET'])
 async def health():
     return "Health check: OK \n"
+
 def main():
     app.run(debug=True)
