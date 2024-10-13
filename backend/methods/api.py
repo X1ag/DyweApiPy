@@ -1,7 +1,9 @@
 import json
 from quart import Quart, jsonify
+from quart_cors import cors
 
 app = Quart(__name__)
+app = cors(app, allow_origin='localhost:5173')
 
 # Пример маршрута для GET-запроса
 @app.route('/dyweapi/v1/getData/<address>/<timeframe>', methods=['GET'])
